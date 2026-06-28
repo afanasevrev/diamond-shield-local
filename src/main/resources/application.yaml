@@ -1,3 +1,45 @@
+server:
+  port: 8090
+
 spring:
   application:
-    name: diamond-shield-local
+    name: diamondshield-local-server
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/diamondshield_local
+    username: postgres
+    password: postgres
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+diamondshield:
+  local-server:
+    id: "55555555-5555-5555-5555-555555555555"
+    token: "local-server-token-123"
+
+  central:
+    base-url: "http://localhost:8080"
+    connect-timeout-ms: 5000
+    read-timeout-ms: 15000
+
+  sync:
+    heartbeat-interval-ms: 30000
+    config-pull-interval-ms: 60000
+    event-push-interval-ms: 10000
+    device-poll-interval-ms: 5000
+
+  perco:
+    enabled: false
+    host: "192.168.1.100"
+    port: 4001
+    timeout-ms: 3000

@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.diamondshield.local.config.LocalServerProperties;
+import ru.diamondshield.local.entity.LocalConfigState;
 import ru.diamondshield.local.repository.*;
 
 import java.time.LocalDateTime;
@@ -67,9 +68,25 @@ public class LocalDiagnosticsController {
         result.put("localServerId", properties.getLocalServer().getId());
         result.put("centralBaseUrl", properties.getCentral().getBaseUrl());
 
+        result.put("controllersSource", "database");
+        result.put("controllersNote", "Controllers are received from central server config and stored in local DB");
+
         result.put("percoEnabled", properties.getPerco().isEnabled());
-        result.put("percoHost", properties.getPerco().getHost());
-        result.put("percoPort", properties.getPerco().getPort());
+        result.put("percoTimeoutMs", properties.getPerco().getTimeoutMs());
+
+        LocalConfigState state = configStateRepository
+                .findFirstByLocalServerId(properties.getLocalServer().getId())
+                .orElse(null);
+
+        if (state == null) {
+            result.put("objectId", null);
+            result.put("lastConfigPullAt", null);
+            result.put("lastSuccessfulPushAt", null);
+        } else {
+            result.put("objectId", state.getObjectId());
+            result.put("lastConfigPullAt", state.getLastConfigPullAt());
+            result.put("lastSuccessfulPushAt", state.getLastSuccessfulPushAt());
+        }
 
         result.put("configState", configStateRepository.count());
         result.put("controllers", controllerRepository.count());

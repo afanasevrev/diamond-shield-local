@@ -89,17 +89,29 @@ public class LocalDiagnosticsController {
         }
 
         result.put("configState", configStateRepository.count());
+
         result.put("controllers", controllerRepository.count());
         result.put("readers", readerRepository.count());
         result.put("accessPoints", accessPointRepository.count());
+
         result.put("persons", personRepository.count());
         result.put("identifiers", identifierRepository.count());
         result.put("accessRules", ruleRepository.count());
+
         result.put("schedules", scheduleRepository.count());
         result.put("scheduleIntervals", intervalRepository.count());
+
         result.put("accessEvents", accessEventRepository.count());
+        result.put("sentAccessEvents", accessEventRepository.countBySentToCentralTrue());
+        result.put("unsentAccessEvents", accessEventRepository.countBySentToCentralFalse());
+
         result.put("alarmEvents", alarmEventRepository.count());
+        result.put("sentAlarmEvents", alarmEventRepository.countBySentToCentralTrue());
+        result.put("unsentAlarmEvents", alarmEventRepository.countBySentToCentralFalse());
+
         result.put("deviceStatusEvents", deviceStatusEventRepository.count());
+        result.put("sentDeviceStatusEvents", deviceStatusEventRepository.countBySentToCentralTrue());
+        result.put("unsentDeviceStatusEvents", deviceStatusEventRepository.countBySentToCentralFalse());
 
         return result;
     }

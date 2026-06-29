@@ -12,4 +12,8 @@ public interface LocalAccessEventRepository extends JpaRepository<LocalAccessEve
     List<LocalAccessEvent> findTop100BySentToCentralFalseOrderByCreatedAtAsc();
 
     Optional<LocalAccessEvent> findByLocalEventId(String localEventId);
+
+    long countBySentToCentralFalse();
+
+    long countBySentToCentralTrue();
 }

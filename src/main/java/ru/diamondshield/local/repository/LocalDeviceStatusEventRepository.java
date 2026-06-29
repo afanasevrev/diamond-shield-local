@@ -9,4 +9,8 @@ import java.util.UUID;
 public interface LocalDeviceStatusEventRepository extends JpaRepository<LocalDeviceStatusEvent, UUID> {
 
     List<LocalDeviceStatusEvent> findTop100BySentToCentralFalseOrderByCreatedAtAsc();
+
+    long countBySentToCentralFalse();
+
+    long countBySentToCentralTrue();
 }

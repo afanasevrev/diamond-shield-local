@@ -12,4 +12,8 @@ public interface LocalAlarmEventRepository extends JpaRepository<LocalAlarmEvent
     List<LocalAlarmEvent> findTop100BySentToCentralFalseOrderByCreatedAtAsc();
 
     Optional<LocalAlarmEvent> findByLocalEventId(String localEventId);
+
+    long countBySentToCentralFalse();
+
+    long countBySentToCentralTrue();
 }

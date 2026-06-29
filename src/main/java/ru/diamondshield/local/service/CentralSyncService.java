@@ -9,10 +9,10 @@ import java.net.InetAddress;
 @Service
 public class CentralSyncService {
 
-    private final CentralClientService.CentralClientService centralClientService;
+    private final CentralClientService centralClientService;
     private final LocalConfigApplyService localConfigApplyService;
 
-    public CentralSyncService(CentralClientService.CentralClientService centralClientService,
+    public CentralSyncService(CentralClientService centralClientService,
                               LocalConfigApplyService localConfigApplyService) {
         this.centralClientService = centralClientService;
         this.localConfigApplyService = localConfigApplyService;

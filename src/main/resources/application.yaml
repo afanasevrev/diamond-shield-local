@@ -39,5 +39,9 @@ diamondshield:
     device-poll-interval-ms: 5000
 
   perco:
-    enabled: false
-    timeout-ms: 3000
+    enabled: true
+    websocket-path: "/ws/perco"
+    password: ""
+    default-open-time-ms: 1000
+    default-open-type: "open once"
+    identifier-type: "card"

@@ -43,6 +43,12 @@
 	</dependencyManagement>
 
 	<dependencies>
+		<!-- Для взаимодействия с контроллером Perco -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-websocket</artifactId>
+		</dependency>
+
 		<!-- REST API локального сервера -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

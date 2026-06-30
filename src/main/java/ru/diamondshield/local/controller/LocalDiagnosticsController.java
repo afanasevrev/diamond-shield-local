@@ -72,7 +72,7 @@ public class LocalDiagnosticsController {
         result.put("controllersNote", "Controllers are received from central server config and stored in local DB");
 
         result.put("percoEnabled", properties.getPerco().isEnabled());
-     
+
 
         LocalConfigState state = configStateRepository
                 .findFirstByLocalServerId(properties.getLocalServer().getId())

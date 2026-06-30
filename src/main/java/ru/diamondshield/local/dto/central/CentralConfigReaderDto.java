@@ -8,6 +8,9 @@ public class CentralConfigReaderDto {
     private UUID controllerId;
     private UUID accessPointId;
 
+    private Integer percoExdevNumber;
+    private Integer percoDirection;
+
     private String name;
     private String readerType;
     private String direction;
@@ -26,6 +29,14 @@ public class CentralConfigReaderDto {
 
     public UUID getAccessPointId() {
         return accessPointId;
+    }
+
+    public Integer getPercoExdevNumber() {
+        return percoExdevNumber;
+    }
+
+    public Integer getPercoDirection() {
+        return percoDirection;
     }
 
     public String getName() {
@@ -54,6 +65,14 @@ public class CentralConfigReaderDto {
 
     public void setAccessPointId(UUID accessPointId) {
         this.accessPointId = accessPointId;
+    }
+
+    public void setPercoExdevNumber(Integer percoExdevNumber) {
+        this.percoExdevNumber = percoExdevNumber;
+    }
+
+    public void setPercoDirection(Integer percoDirection) {
+        this.percoDirection = percoDirection;
     }
 
     public void setName(String name) {

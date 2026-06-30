@@ -152,9 +152,11 @@ public class LocalServerProperties {
     public static class Perco {
 
         private boolean enabled;
-        private String host;
-        private int port;
-        private int timeoutMs;
+        private String websocketPath;
+        private String password;
+        private int defaultOpenTimeMs;
+        private String defaultOpenType;
+        private String identifierType;
 
         public Perco() {
         }
@@ -167,28 +169,45 @@ public class LocalServerProperties {
             this.enabled = enabled;
         }
 
-        public String getHost() {
-            return host;
+        public String getWebsocketPath() {
+            return websocketPath;
         }
 
-        public void setHost(String host) {
-            this.host = host;
+        public void setWebsocketPath(String websocketPath) {
+            this.websocketPath = websocketPath;
         }
 
-        public int getPort() {
-            return port;
+        public String getPassword() {
+            return password;
         }
 
-        public void setPort(int port) {
-            this.port = port;
+        public void setPassword(String password) {
+            this.password = password;
         }
 
-        public int getTimeoutMs() {
-            return timeoutMs;
+        public int getDefaultOpenTimeMs() {
+            return defaultOpenTimeMs;
         }
 
-        public void setTimeoutMs(int timeoutMs) {
-            this.timeoutMs = timeoutMs;
+        public void setDefaultOpenTimeMs(int defaultOpenTimeMs) {
+            this.defaultOpenTimeMs = defaultOpenTimeMs;
+        }
+
+        public String getDefaultOpenType() {
+            return defaultOpenType;
+        }
+
+        public void setDefaultOpenType(String defaultOpenType) {
+            this.defaultOpenType = defaultOpenType;
+        }
+
+        public String getIdentifierType() {
+            return identifierType;
+        }
+
+        public void setIdentifierType(String identifierType) {
+            this.identifierType = identifierType;
         }
     }
+
 }

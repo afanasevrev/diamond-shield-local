@@ -27,6 +27,12 @@ public class LocalReader {
     @Column(name = "access_point_id")
     private UUID accessPointId;
 
+    @Column(name = "perco_exdev_number")
+    private Integer percoExdevNumber;
+
+    @Column(name = "perco_direction")
+    private Integer percoDirection;
+
     @Column(length = 50)
     private String status;
 
@@ -62,43 +68,59 @@ public class LocalReader {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getReaderType() {
         return readerType;
-    }
-
-    public void setReaderType(String readerType) {
-        this.readerType = readerType;
     }
 
     public String getDirection() {
         return direction;
     }
 
-    public void setDirection(String direction) {
-        this.direction = direction;
-    }
-
     public UUID getAccessPointId() {
         return accessPointId;
     }
 
-    public void setAccessPointId(UUID accessPointId) {
-        this.accessPointId = accessPointId;
+    public Integer getPercoExdevNumber() {
+        return percoExdevNumber;
+    }
+
+    public Integer getPercoDirection() {
+        return percoDirection;
     }
 
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public LocalDateTime getUpdatedAt() {
         return updatedAt;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setReaderType(String readerType) {
+        this.readerType = readerType;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public void setAccessPointId(UUID accessPointId) {
+        this.accessPointId = accessPointId;
+    }
+
+    public void setPercoExdevNumber(Integer percoExdevNumber) {
+        this.percoExdevNumber = percoExdevNumber;
+    }
+
+    public void setPercoDirection(Integer percoDirection) {
+        this.percoDirection = percoDirection;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

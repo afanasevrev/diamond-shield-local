@@ -119,6 +119,10 @@ public class LocalConfigApplyService {
             entity.setId(dto.getId());
             entity.setControllerId(dto.getControllerId());
             entity.setAccessPointId(dto.getAccessPointId());
+
+            entity.setPercoExdevNumber(dto.getPercoExdevNumber());
+            entity.setPercoDirection(dto.getPercoDirection());
+
             entity.setName(dto.getName());
             entity.setReaderType(dto.getReaderType());
             entity.setDirection(dto.getDirection());

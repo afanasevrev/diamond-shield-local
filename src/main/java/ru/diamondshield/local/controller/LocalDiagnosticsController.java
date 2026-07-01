@@ -76,7 +76,7 @@ public class LocalDiagnosticsController {
         result.put("percoDefaultOpenTimeMs", properties.getPerco().getDefaultOpenTimeMs());
         result.put("percoDefaultOpenType", properties.getPerco().getDefaultOpenType());
         result.put("percoIdentifierType", properties.getPerco().getIdentifierType());
-        
+
         LocalConfigState state = configStateRepository
                 .findFirstByLocalServerId(properties.getLocalServer().getId())
                 .orElse(null);

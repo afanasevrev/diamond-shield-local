@@ -72,8 +72,11 @@ public class LocalDiagnosticsController {
         result.put("controllersNote", "Controllers are received from central server config and stored in local DB");
 
         result.put("percoEnabled", properties.getPerco().isEnabled());
-
-
+        result.put("percoWebsocketPath", properties.getPerco().getWebsocketPath());
+        result.put("percoDefaultOpenTimeMs", properties.getPerco().getDefaultOpenTimeMs());
+        result.put("percoDefaultOpenType", properties.getPerco().getDefaultOpenType());
+        result.put("percoIdentifierType", properties.getPerco().getIdentifierType());
+        
         LocalConfigState state = configStateRepository
                 .findFirstByLocalServerId(properties.getLocalServer().getId())
                 .orElse(null);
